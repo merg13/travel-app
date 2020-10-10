@@ -36,11 +36,20 @@ export class TravelRequestFormComponent implements OnInit {
 
   submitForm(e: Event): void {
 
+    //temp object in memory for sake of demonstrating submissions
+    const submittedModel = new ITravelRequest();
+    submittedModel.origin = this.model.origin;
+    submittedModel.destination = this.model.destination;
+    submittedModel.startDate = this.model.startDate;
+    submittedModel.numTravelers = this.model.numTravelers;
+    submittedModel.submissionDate = this.model.submissionDate;
+    submittedModel.totalCost = this.model.totalCost;
+
     if (this.mockRequests != null) {
       this.mockRequests.push(this.model);
     }
     else {
-      this.mockRequests = [this.model];
+      this.mockRequests = [submittedModel];
     }
   }
 
