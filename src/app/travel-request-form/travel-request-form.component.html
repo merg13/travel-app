@@ -56,7 +56,7 @@
           <p class="list-group-item-text"><i>{{ model.submissionDate | date: 'medium' }}</i></p>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-3 list-group">
-          <button class="btn btn-raised btn-primary">Submit</button>
+          <button (click)="submitForm($event)" class="btn btn-raised btn-primary">Submit</button>
         </div>
         <div class="col-2">
         </div>
@@ -74,9 +74,15 @@
 
 <!-- Simple debug of the model to illustrate the form saving to the typescript ITraveRequest model -->
 <hr>
-<div>
-  <h3>Debug Travel Request Form Model</h3>
-  <pre> {{ this.model | json }}</pre>
+<div class="row">
+  <div class="col-6">
+    <h3>Debug Travel Request Form Model</h3>
+    <pre> {{ this.model | json }}</pre>
+  </div>
+  <div class="col-6">
+    <h3>Debug List of Submitted Travel Request Forms</h3>
+    <pre> {{ this.mockRequests | json }} </pre>
+  </div>
 </div>
 
 
