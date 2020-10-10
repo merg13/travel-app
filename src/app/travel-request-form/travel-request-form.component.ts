@@ -1,5 +1,6 @@
 import { ITravelRequest } from './../models/ITravelRequest';
 import { Component, Input, OnInit } from '@angular/core';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'travel-request-form',
@@ -45,12 +46,17 @@ export class TravelRequestFormComponent implements OnInit {
     submittedModel.submissionDate = this.model.submissionDate;
     submittedModel.totalCost = this.model.totalCost;
 
+    this.model.isBusy = true;
+
     if (this.mockRequests != null) {
       this.mockRequests.push(this.model);
     }
     else {
       this.mockRequests = [submittedModel];
     }
+
+    // fake delay simulating calling the server to save the submission
+    setTimeout(() => { this.model.isBusy = false; }, 3000);
   }
 
 }

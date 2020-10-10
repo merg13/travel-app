@@ -57,6 +57,7 @@
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-3 list-group">
           <button (click)="submitForm($event)" class="btn btn-raised btn-primary">Submit</button>
+          <div *ngIf="model.isBusy" class="alert alert-success">Travel Request submission successful.</div>
         </div>
         <div class="col-2">
         </div>
