@@ -5,7 +5,7 @@
     <h5 class="card-title"><b>Travel Request</b></h5>
   </div>
 
-  <form class="" action="">
+  <form name="travelRequestForm" #travelRequestForm="ngForm" class="" action="">
   <!-- Card Body Content -->
   <div class="card-body bg-white">
 
@@ -31,7 +31,7 @@
             name="numTravelersSelect"
             id="numTravelersSelect"
             class="form-control"
-            ngModel="model.numTravelers"
+            [(ngModel)]="model.numTravelers"
             (ngModelChange)="calculateTotalCost($event)">
             <option disabled selected>Select...</option>
             <option *ngFor="let num of numbers" [ngValue]="num">{{ num }}</option>
@@ -69,6 +69,14 @@
 
       </div>
   </form>
+</div>
+
+
+<!-- Simple debug of the model to illustrate the form saving to the typescript ITraveRequest model -->
+<hr>
+<div>
+  <h3>Debug Travel Request Form Model</h3>
+  <pre> {{ this.model | json }}</pre>
 </div>
 
 

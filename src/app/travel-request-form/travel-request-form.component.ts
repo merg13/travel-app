@@ -23,7 +23,6 @@ export class TravelRequestFormComponent implements OnInit {
 
   calculateTotalCost(e: Event): void {
     this.model.totalCost = (this.model.numTravelers * this.model.arbitraryCost) ?? 0.0;
-    console.log(this.model.totalCost);
   }
 
 }
