@@ -1,0 +1,74 @@
+
+<div class="card w-50 bg-light">
+  <!-- Card Header -->
+  <div class="card-header">
+    <h5 class="card-title"><b>Travel Request</b></h5>
+  </div>
+
+  <form class="" action="">
+  <!-- Card Body Content -->
+  <div class="card-body bg-white">
+
+      <div class="row mt-1 mb-5">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
+          <label for="originInput" class="bmd-label-static">Origin Airport</label>
+          <input name="originInput" [(ngModel)]="model.origin" type="text" class="form-control" id="originInput">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
+          <label for="destinationInput" class="bmd-label-static">Destination Airport</label>
+          <input name="desintationInput" [(ngModel)]="model.destination" class="form-control" type="text" id="destinationInput">
+        </div>
+        <!-- blank col-4 for future use -->
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
+          <label for="numTravelersSelect" class="bmd-label-static">Number Travelers</label>
+          <select
+            required
+            name="numTravelersSelect"
+            id="numTravelersSelect"
+            class="form-control"
+            ngModel="model.numTravelers"
+            (ngModelChange)="calculateTotalCost($event)">
+            <option disabled selected>Select...</option>
+            <option *ngFor="let num of numbers" [ngValue]="num">{{ num }}</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
+          <label for="travelStartDate" class="bmd-label-static">Requested Start Date</label>
+          <input name="startDateInput" [(ngModel)]="model.startDate" type="date" placeholder="" class="form-control" id="travelStartDate">
+        </div>
+        <!-- blank col-4 for future use -->
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <div class="card-footer bg-light">
+    <div class="row ml-2">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 list-group">
+          <p class="list-group-heading"> <b>Total Cost</b></p>
+          <p class="list-group-item-text">{{ model.totalCost | currency }}</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 list-group">
+          <p class="list-group-heading"> <b>Submitted:</b></p>
+          <p class="list-group-item-text"><i>{{ model.submissionDate | date: 'medium' }}</i></p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-3 list-group">
+          <button class="btn btn-raised btn-primary">Submit</button>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-2"></div>
+
+      </div>
+
+
+      </div>
+  </form>
+</div>
+
+

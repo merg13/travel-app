@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.min-w-25 {
+  min-width: 25%;
+}
+.min-w-50 {
+  min-width: 50%;
+}
+.min-w-75 {
+  min-width: 75%;
+}
+.min-w-100 {
+  min-width: 100%;
+}
