@@ -4,7 +4,7 @@ export class ITravelRequest {
   destination = '';
   startDate = new Date();
   numTravelers = 1;
-  submissionDate = new Date();
+  submissionDate: Date | null = null;
   readonly arbitraryCost = 150;
   totalCost = 1 * this.arbitraryCost;
   isBusy = false;

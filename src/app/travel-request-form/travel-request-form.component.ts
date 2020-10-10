@@ -36,7 +36,7 @@ export class TravelRequestFormComponent implements OnInit {
   }
 
   submitForm(e: Event): void {
-
+    this.model.submissionDate = new Date();
     //temp object in memory for sake of demonstrating submissions
     const submittedModel = new ITravelRequest();
     submittedModel.origin = this.model.origin;

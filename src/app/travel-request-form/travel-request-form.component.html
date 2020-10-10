@@ -12,12 +12,12 @@
       <div class="row mt-1 mb-5">
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
           <label for="originInput" class="bmd-label-static">Origin Airport</label>
-          <input name="originInput" [(ngModel)]="model.origin" type="text" class="form-control" id="originInput">
+          <input required name="originInput" [(ngModel)]="model.origin" type="text" class="form-control" id="originInput">
         </div>
 
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
           <label for="destinationInput" class="bmd-label-static">Destination Airport</label>
-          <input name="desintationInput" [(ngModel)]="model.destination" class="form-control" type="text" id="destinationInput">
+          <input required name="desintationInput" [(ngModel)]="model.destination" class="form-control" type="text" id="destinationInput">
         </div>
         <!-- blank col-4 for future use -->
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
@@ -39,7 +39,7 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 form-group">
           <label for="travelStartDate" class="bmd-label-static">Requested Start Date</label>
-          <input name="startDateInput" [(ngModel)]="model.startDate" type="date" placeholder="" class="form-control" id="travelStartDate">
+          <input required name="startDateInput" [(ngModel)]="model.startDate" type="date" placeholder="" class="form-control" id="travelStartDate">
         </div>
         <!-- blank col-4 for future use -->
         <div class="col-4"></div>
@@ -53,7 +53,7 @@
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 list-group">
           <p class="list-group-heading"> <b>Submitted:</b></p>
-          <p class="list-group-item-text"><i>{{ model.submissionDate | date: 'medium' }}</i></p>
+          <p *ngIf="model.isBusy" class="list-group-item-text"><i>{{ model.submissionDate | date: 'medium' }}</i></p>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 mt-3 list-group">
           <button (click)="submitForm($event)" class="btn btn-raised btn-primary">Submit</button>
