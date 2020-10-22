@@ -1,0 +1,24 @@
+
+.app-nav-width {
+  width: calc(100% - 16px);
+}
+
+.router-outlet-location {
+  width: calc(100% - 16px);
+}
+
+.app-footer-location {
+  width: calc(100% - 16px);
+}
+
+.header-row-height {
+}
+
+.outlet-row-height {
+  min-height: calc(100vh - 150px);
+}
+
+.footer-row-height {
+  height: 50px;
+}
+

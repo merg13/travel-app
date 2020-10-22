@@ -1,7 +1,11 @@
-<h2>Welcome {{title}}</h2>
-<p>OS: Windows (WSL2 Enabled)</p>
-<p>IDE: VSCode</p>
-<hr>
-<div class="fluid-container m-3">
-  <travel-request-form></travel-request-form>
+<div class="container-fluid">
+  <div class="row">
+    <app-nav class="app-nav-width mt-2"></app-nav>
+  </div>
+  <div class="row outlet-row-height">
+    <router-outlet class="router-outlet-width mt-3"></router-outlet>
+  </div>
+  <div class="row footer-row-height">
+    <app-footer class="app-footer-location mb-2"></app-footer>
+  </div>
 </div>
